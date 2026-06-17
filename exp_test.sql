@@ -1,0 +1,6 @@
+SELECT * FROM 家計簿
+INTO OUTFILE '/tmp/output.csv'
+FIELDS TERMINATED BY ',' 
+ENCLOSED BY '"' 
+LINES TERMINATED BY '\r\n';
+
