@@ -1,0 +1,55 @@
+--RPG_DBデータベースを使用する
+USE RPG_DB
+
+--CSVファイルは/tmp下に配置すること
+--member.csv
+SET GLOBAL local_infile=on;
+LOAD DATA INFILE '/tmp/member.csv'
+INTO TABLE メンバー
+FIELDS TERMINATED BY ','
+ENCLOSED BY '"'
+LINES TERMINATED BY '\n'
+IGNORE 1 ROWS;
+
+--equip.csv
+SET GLOBAL local_infile=on;
+LOAD DATA INFILE '/tmp/equip.csv'
+INTO TABLE 装備
+FIELDS TERMINATED BY ','
+ENCLOSED BY '"'
+LINES TERMINATED BY '\n'
+IGNORE 1 ROWS;
+
+--weapon.csv
+SET GLOBAL local_infile=on;
+LOAD DATA INFILE '/tmp/weapon.csv'
+INTO TABLE 武器
+FIELDS TERMINATED BY ','
+ENCLOSED BY '"'
+LINES TERMINATED BY '\n'
+IGNORE 1 ROWS;
+
+--armor.csv
+SET GLOBAL local_infile=on;
+LOAD DATA INFILE '/tmp/armor.csv'
+INTO TABLE 防具
+FIELDS TERMINATED BY ','
+ENCLOSED BY '"'
+LINES TERMINATED BY '\n'
+IGNORE 1 ROWS;
+
+--職業.csv
+SET GLOBAL local_infile=on;
+LOAD DATA INFILE '/tmp/class.csv'
+INTO TABLE 職業
+FIELDS TERMINATED BY ','
+ENCLOSED BY '"'
+LINES TERMINATED BY '\n'
+IGNORE 1 ROWS;
+
+--確認
+SELECT * FROM メンバー;
+SELECT * FROM 装備;
+SELECT * FROM 武器;
+SELECT * FROM 防具;
+SELECT * FROM 職業;

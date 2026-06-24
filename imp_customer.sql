@@ -1,0 +1,36 @@
+--CSVファイルは/tmp下に配置すること
+SET GLOBAL local_infile=on;
+LOAD DATA INFILE '/tmp/customer.csv'
+INTO TABLE 顧客
+FIELDS TERMINATED BY ','
+ENCLOSED BY '"'
+LINES TERMINATED BY '\n'
+IGNORE 1 ROWS;
+
+--CSVファイルは/tmp下に配置すること
+SET GLOBAL local_infile=on;
+LOAD DATA INFILE '/tmp/company.csv'
+INTO TABLE 取引先
+FIELDS TERMINATED BY ','
+ENCLOSED BY '"'
+LINES TERMINATED BY '\n'
+IGNORE 1 ROWS;
+
+--CSVファイルは/tmp下に配置すること
+SET GLOBAL local_infile=on;
+LOAD DATA INFILE '/tmp/position.csv'
+INTO TABLE 役職
+FIELDS TERMINATED BY ','
+ENCLOSED BY '"'
+LINES TERMINATED BY '\n'
+IGNORE 1 ROWS;
+
+SHOW TABLES;
+
+DESCRIBE 顧客;
+DESCRIBE 取引先;
+DESCRIBE 役職;
+
+SELECT * FROM 顧客;
+SELECT * FROM 取引先;
+SELECT * FROM 役職;

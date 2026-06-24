@@ -1,0 +1,29 @@
+--データベース作成(既に同名のデータベースがあれば削除する)
+CREATE OR REPLACE DATABASE 顧客管理;
+--データベースの切替
+USE 顧客管理;
+--顧客テーブルの作成
+CREATE OR REPLACE TABLE 顧客 (
+    ID INTEGER AUTO_INCREMENT PRIMARY KEY,
+    氏名 VARCHAR(20) NOT NULL,
+    会社ID INTEGER NOT NULL,
+    役職ID INTEGER NOT NULL,
+    メールアドレス VARCHAR(50) DEFAULT '(未確認)',
+    電話番号 CHAR(15) DEFAULT '(未確認)',
+    備考 VARCHAR(140),
+    削除FL INTEGER NOT NULL DEFAULT 0
+);
+--取引先テーブルの作成
+CREATE OR REPLACE TABLE 取引先 (
+    ID INTEGER AUTO_INCREMENT PRIMARY KEY,
+    社名 VARCHAR(50) NOT NULL,
+    住所  VARCHAR(100) NOT NULL,
+    電話番号 CHAR(15) NOT NULL DEFAULT '(未確認)',
+    備考 VARCHAR(140)
+);
+--役職テーブルの作成
+CREATE OR REPLACE TABLE 役職 (
+    ID INTEGER AUTO_INCREMENT PRIMARY KEY,
+    名前 VARCHAR(50) NOT NULL,
+    備考 VARCHAR(140)
+);

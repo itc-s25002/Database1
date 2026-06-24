@@ -1,0 +1,6 @@
+BEGIN;
+	USE RPG_DB;
+	UPDATE 装備
+	SET 武器ID = 3
+	WHERE メンバーID = 1;
+COMMIT;
